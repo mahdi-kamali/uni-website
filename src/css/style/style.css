@@ -1,0 +1,161 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #0f8b8d;
+  padding: 0.5em 2em;
+  align-items: center;
+}
+header .left .user {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 2em;
+  color: white;
+  gap: 0.5rem;
+  background-color: white;
+  color: #0f8b8d;
+  border-radius: 100rem;
+}
+header .mid {
+  font-family: iran-nastalig;
+  font-size: 3rem;
+  color: white;
+}
+header .bottom {
+  width: 100%;
+}
+header .bottom ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  direction: rtl;
+  color: white;
+  padding: 1em;
+}
+header .bottom ul li {
+  padding: 0.75em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 0.9rem;
+}
+header .bottom ul .selected {
+  background-color: white;
+  border-radius: 100rem;
+  color: #0f8b8d;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
+.main-page .poster img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 30rem;
+  width: 100%;
+}
+.main-page .intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  place-content: center;
+  padding: 2em 0;
+  background-color: white;
+  position: relative;
+  top: -5rem;
+  z-index: 4;
+  width: 90%;
+  margin: auto;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.5rem 1rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+.main-page .intro .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 0.5rem;
+  text-align: center;
+}
+.main-page .intro .item svg {
+  width: calc(3vw + 3rem);
+  height: calc(3vw + 3rem);
+}
+.main-page .intro .item h1 {
+  font-size: 0.9rem;
+}
+.main-page .intro .selected::after {
+  content: "";
+  /* Polygon 1 */
+  position: absolute;
+  top: calc(100% + 1rem);
+  height: 4rem;
+  width: 5rem;
+  /* Tertiary */
+  background: #e07a5f;
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+          clip-path: polygon(50% 100%, 0 0, 100% 0);
+  rotate: 180deg;
+}
+.main-page .articles {
+  width: 90%;
+  align-self: center;
+  border-top: 10px solid #e07a5f;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.main-page .articles .articles-header {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.main-page .articles .articles-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main-page .articles .articles-body .item {
+  direction: rtl;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  padding: 2em;
+  border-radius: 1rem;
+}
+.main-page .articles .articles-body .item .item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+.main-page .articles .articles-body .item .item-body h1 {
+  font-size: 1.5rem;
+}
+.main-page .articles .articles-body .item .item-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-page .articles .articles-body .item .item-header img {
+  width: 15rem;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+}
+.main-page .articles .articles-body .item .item-buttons {
+  display: flex;
+  margin-top: 1rem;
+}
+.main-page .articles .articles-body .item .item-buttons button {
+  all: unset;
+  background-color: #0f8b8d;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+  border-radius: 100rem;
+}/*# sourceMappingURL=style.css.map */

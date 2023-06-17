@@ -1,0 +1,33 @@
+@font-face {
+    font-family: iranSans;
+    src: url("../../fonts/Iranian-Sans.ttf");
+}
+
+@font-face {
+    font-family: iran-nastalig;
+    src: url("../../fonts/Iran-nastaliq.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+img {
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: iranSans;
+    max-width: 1600px;
+    margin: auto;
+}
+
+button {
+    cursor: pointer !important;
+}
