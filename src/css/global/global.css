@@ -1,6 +1,6 @@
 @font-face {
   font-family: iranSans;
-  src: url("../../fonts/Iranian-Sans.ttf");
+  src: url("../../fonts/iran-sans-2.ttf");
 }
 @font-face {
   font-family: iran-nastalig;
@@ -12,6 +12,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  font-family: iranSans !important;
 }
 
 img {
@@ -28,5 +29,10 @@ body {
 }
 
 button {
+  all: unset;
   cursor: pointer !important;
+}
+
+.swiper {
+  width: 100% !important;
 }/*# sourceMappingURL=global.css.map */

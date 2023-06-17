@@ -19,9 +19,11 @@ header .left .user {
   border-radius: 100rem;
 }
 header .mid {
-  font-family: iran-nastalig;
   font-size: 3rem;
   color: white;
+}
+header .mid .name {
+  font-family: iran-nastalig !important;
 }
 header .bottom {
   width: 100%;
@@ -49,7 +51,10 @@ header .bottom ul .selected {
 .main-page {
   display: flex;
   flex-direction: column;
-  padding-bottom: 2em;
+}
+.main-page .poster {
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
 }
 .main-page .poster img {
   -o-object-fit: cover;
@@ -77,7 +82,7 @@ header .bottom ul .selected {
   justify-content: center;
   align-items: center;
   margin: auto;
-  gap: 0.5rem;
+  gap: 0.75rem;
   text-align: center;
 }
 .main-page .intro .item svg {
@@ -85,7 +90,7 @@ header .bottom ul .selected {
   height: calc(3vw + 3rem);
 }
 .main-page .intro .item h1 {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 .main-page .intro .selected::after {
   content: "";
@@ -150,12 +155,150 @@ header .bottom ul .selected {
 .main-page .articles .articles-body .item .item-buttons {
   display: flex;
   margin-top: 1rem;
+  gap: 1rem;
 }
 .main-page .articles .articles-body .item .item-buttons button {
   all: unset;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   background-color: #0f8b8d;
   color: white;
   padding: 0.5em 1em;
   font-size: 0.9rem;
   border-radius: 100rem;
+}
+.main-page .articles .articles-body .item .item-buttons .link {
+  background-color: #e07a5f;
+}
+.main-page .stations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.main-page .stations .item {
+  background-color: rebeccapurple;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+  border-radius: 0.75rem;
+  width: 22rem;
+  font-size: 0.9rem;
+  text-align: center;
+  gap: 0.5rem;
+  box-shadow: 0rem 0.3rem 0.5rem 0.1rem rgba(0, 0, 0, 0.4);
+}
+.main-page .stations .item h1 {
+  font-weight: bold;
+  text-shadow: rgba(0, 0, 0, 0.1) 0.2rem 0.2rem 0.2rem;
+}
+.main-page .stations .item p {
+  opacity: 0.8;
+}
+.main-page .stations .first {
+  background-color: #3d405b;
+}
+.main-page .stations .second {
+  background-color: #81b29a;
+}
+.main-page .stations .third {
+  background-color: #c2a878;
+}
+.main-page .about-unversity {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+  align-items: center;
+}
+.main-page .about-unversity .left {
+  text-align: right;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+.main-page .about-unversity .left h1 {
+  font-size: 2rem;
+}
+.main-page .about-unversity .left p {
+  font-size: 1.25rem;
+}
+.main-page .about-unversity .left button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #0f8b8d;
+  color: white;
+  padding: 0.75em 3em;
+  border-radius: 100rem;
+}
+.main-page .total-views {
+  width: 70%;
+  margin: auto;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3em;
+  background-color: rgba(0, 0, 0, 0.192);
+  border-radius: 1rem;
+  color: white;
+}
+.main-page .total-views .item {
+  text-align: center;
+  border-right: 4px white solid;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+.main-page .total-views .item:last-child {
+  border-right: none;
+}
+.main-page .total-views .item h1 {
+  font-size: 5rem;
+}
+.main-page .total-views .item span {
+  font-size: 1.5rem;
+}
+.main-page footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #40484b;
+  color: white;
+  margin-top: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  padding: 3em 4em;
+  gap: 1rem;
+  direction: rtl;
+}
+.main-page footer ul {
+  line-height: 2.4;
+}
+.main-page footer ul h1 {
+  font-size: 1.6rem;
+  padding-bottom: 0.25em;
+}
+.main-page footer ul li {
+  opacity: 0.7;
+  list-style: disc;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+.main-page footer .social-media li {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem;
+  text-align: right;
+  place-content: center;
+  align-items: center;
+}
+.main-page footer .social-media li .icon {
+  font-size: 2rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=style.css.map */
