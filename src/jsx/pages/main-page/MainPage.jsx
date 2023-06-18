@@ -9,7 +9,7 @@ import Footer from '../../footer/Footer'
 
 const MainPage = () => {
     return (
-        <div className='main-page'>
+        <main className='main-page'>
             <Poster />
             <Intro />
             <Articles />
@@ -18,7 +18,7 @@ const MainPage = () => {
             <TotalViews />
             <Footer />
 
-        </div>
+        </main>
     )
 }
 

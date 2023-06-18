@@ -37,7 +37,7 @@ header .bottom ul {
   padding: 1em;
 }
 header .bottom ul li {
-  padding: 0.75em;
+  padding: 0.6em 1em;
   cursor: pointer;
   transition: all 0.5s ease;
   font-size: 0.9rem;
@@ -301,4 +301,72 @@ header .bottom ul .selected {
 .main-page footer .social-media li .icon {
   font-size: 2rem;
   margin-left: 1rem;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 18rem;
+  align-items: start;
+}
+.gallery .right {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dbe4e8;
+  border-radius: 0 0 1rem 1rem;
+}
+.gallery .right h1 {
+  background-color: #0f8b8d;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 0.7rem rgb(128, 172, 151) solid;
+}
+.gallery .right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 2em;
+}
+.gallery .right li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: black;
+}
+.gallery .right li img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+}
+.gallery .right li span {
+  font-size: 1.25rem;
+  padding: 1em;
+}
+.gallery .left {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.gallery .left .item {
+  background-color: rgba(255, 255, 255, 0.686);
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: end;
+  box-shadow: 0.2rem 0.2rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+.gallery .left .item .item-header .image img {
+  aspect-ratio: 16/9;
+}
+.gallery .left .item .item-body {
+  padding: 1em;
 }/*# sourceMappingURL=style.css.map */
