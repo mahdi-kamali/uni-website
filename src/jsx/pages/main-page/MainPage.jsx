@@ -16,8 +16,6 @@ const MainPage = () => {
             <Stations />
             <AboutUniversity />
             <TotalViews />
-            <Footer />
-
         </main>
     )
 }

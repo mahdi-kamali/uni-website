@@ -41,6 +41,7 @@ const Header = () => {
           <li onClick={() => handleOnclick("/", 5)} className={onIndex == 5 ? "selected" : ""}>دریافت فایل</li>
           <li onClick={() => handleOnclick("/gallery", 6)} className={onIndex == 6 ? "selected" : ""}>گالری</li>
           <li onClick={() => handleOnclick("/", 7)} className={onIndex == 7 ? "selected" : ""}>ارتباط با ما</li>
+          <li onClick={() => handleOnclick("/about-us", 8)} className={onIndex == 8 ? "selected" : ""}>درباره ی ما</li>
         </ul>
       </nav>
 
