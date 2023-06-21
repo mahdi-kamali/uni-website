@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Gallery from "./pages/gallery/Gallery";
 import AboutUs from "./about-us/AboutUs";
 import Footer from "./footer/Footer";
+import Employes from "./pages/employes/Employes";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/employes" element={<Employes />} />
             <Route path="*" element={<MainPage />} />
           </Routes>
         </body>

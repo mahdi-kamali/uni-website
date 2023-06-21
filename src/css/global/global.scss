@@ -23,11 +23,21 @@ img {
     object-fit: cover;
 }
 
-body {
+
+
+.App {
+    min-height: 100vh;
     font-family: iranSans;
     max-width: 1400px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+
+
+
 
 button {
     all: unset;
