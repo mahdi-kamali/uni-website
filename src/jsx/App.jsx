@@ -1,5 +1,3 @@
-import Header from "./header/Header";
-import MainPage from "./pages/main-page/MainPage";
 
 
 // Import Swiper styles
@@ -10,10 +8,12 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/effect-fade';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Gallery from "./pages/gallery/Gallery";
-import AboutUs from "./about-us/AboutUs";
 import Footer from "./footer/Footer";
 import Employes from "./pages/employes/Employes";
-
+import Header from "./header/Header";
+import MainPage from "./pages/main-page/MainPage";
+import Files from './pages/files-page/Files';
+import AboutUs from "./pages/about-us/AboutUs"
 function App() {
   return (
     <div className="App">
@@ -26,6 +26,7 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/employes" element={<Employes />} />
             <Route path="*" element={<MainPage />} />
+            <Route path='files' element={<Files />} />
           </Routes>
         </body>
 

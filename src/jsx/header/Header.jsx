@@ -38,7 +38,7 @@ const Header = () => {
           <li onClick={() => handleOnclick("/", 2)} className={onIndex == 2 ? "selected" : ""}>رشته ها</li>
           <li onClick={() => handleOnclick("/", 3)} className={onIndex == 3 ? "selected" : ""}>اساتید</li>
           <li onClick={() => handleOnclick("/employes", 4)} className={onIndex == 4 ? "selected" : ""}>کارمندان</li>
-          <li onClick={() => handleOnclick("/", 5)} className={onIndex == 5 ? "selected" : ""}>دریافت فایل</li>
+          <li onClick={() => handleOnclick("/files", 5)} className={onIndex == 5 ? "selected" : ""}>دریافت فایل</li>
           <li onClick={() => handleOnclick("/gallery", 6)} className={onIndex == 6 ? "selected" : ""}>گالری</li>
           <li onClick={() => handleOnclick("/", 7)} className={onIndex == 7 ? "selected" : ""}>ارتباط با ما</li>
           <li onClick={() => handleOnclick("/about-us", 8)} className={onIndex == 8 ? "selected" : ""}>درباره ی ما</li>

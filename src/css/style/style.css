@@ -557,4 +557,94 @@ html {
   color: white;
   border-radius: 50%;
   padding: 1rem;
+}
+
+.files-page {
+  display: flex;
+  flex-direction: column;
+  width: -moz-max-content;
+  width: max-content;
+  align-self: center;
+  margin: auto;
+  padding: 2em;
+}
+.files-page .files-container {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  transition: all 1s ease;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  padding: 0.5em 2em;
+  box-shadow: 0.3rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0);
+}
+.files-page .files-container .container-header {
+  cursor: pointer;
+  transition: all 1s ease;
+  padding: 0em 1em;
+}
+.files-page .files-container .container-header h1 {
+  font-size: 1.25rem;
+}
+.files-page .files-container .container-header small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.files-page .files-container .container-header:hover {
+  background-color: #0f8b8d;
+  color: white;
+  padding: 0.3em 2.25em;
+  border-radius: 0.25rem !important;
+}
+.files-page .files-container .container-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 1s ease;
+}
+.files-page .files-container .container-body .files {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 2em;
+}
+.files-page .files-container .container-body .files .file {
+  list-style-type: disc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: decimal;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.files-page .files-container .container-body .files .file .file-download {
+  display: flex;
+  gap: 1rem;
+}
+.files-page .files-container .container-body .files .file .file-download button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.files-page .files-container .container-body .files .file .file-download button:last-child {
+  font-size: 1rem;
+}
+.files-page .files-container .container-body .files .file .file-download button:first-child {
+  border: 1px dashed rgb(0, 0, 0);
+  padding: 0.2em 1em;
+  border-radius: 100rem;
+  color: black;
+}
+.files-page .expanded .container-header {
+  background-color: #0f8b8d;
+  color: white;
+  padding: 0.3em 2.25em;
+}
+.files-page .expanded .container-body {
+  grid-template-rows: 1fr;
 }/*# sourceMappingURL=style.css.map */
