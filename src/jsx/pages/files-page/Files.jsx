@@ -14,7 +14,7 @@ const Files = () => {
             <FileContainer defValue={true} />
             <FileContainer defValue={false} />
             <FileContainer defValue={false} />
-        
+
         </main>
     )
 }
