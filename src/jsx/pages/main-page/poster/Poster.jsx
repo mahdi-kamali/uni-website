@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Poster = () => {
     return (
-        <div className='poster'>
+        <section className='poster'>
             <Swiper
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
@@ -35,7 +35,7 @@ const Poster = () => {
             </Swiper>
 
 
-        </div>
+        </section>
     )
 }
 

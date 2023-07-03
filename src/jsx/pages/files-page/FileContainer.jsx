@@ -70,9 +70,6 @@ const FileContainer = ( {defValue}) => {
                 </div>
             </div>
 
-
-
-
         </fieldset>
     )
 }

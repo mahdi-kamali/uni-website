@@ -5,14 +5,18 @@ import { useNavigate } from 'react-router-dom'
 const Header = () => {
 
   const [onIndex, setOnIndex] = useState();
+  const [sideBar, setSideBar] = useState(false)
   const navigator = useNavigate()
 
 
   function handleOnclick(path, index) {
+    setSideBar(false)
     navigator(path)
     setOnIndex(index)
-    console.log(index)
   }
+
+
+
 
 
   return (
@@ -30,9 +34,15 @@ const Header = () => {
         <div className="logo">
           <img src={require("../../images/logo.png")} alt="" />
         </div>
+        <div className="menu">
+          <button onClick={() => { setSideBar(!sideBar) }}>
+            <Icon icon="ep:menu" />
+          </button>
+        </div>
       </div>
-      <nav className="bottom">
+      <nav className={`bottom ${sideBar ? "open" : ""}`}>
         <ul>
+          <li onClick={() => handleOnclick("/auth", 9)} className={onIndex == 9 ? "selected" : ""}>حساب کاربری</li>
           <li onClick={() => handleOnclick("/", 0)} className={onIndex == 0 ? "selected" : ""}>صفحه ی اصلی</li>
           <li onClick={() => handleOnclick("/", 1)} className={onIndex == 1 ? "selected" : ""}>آموزشکده دختران</li>
           <li onClick={() => handleOnclick("/", 2)} className={onIndex == 2 ? "selected" : ""}>رشته ها</li>
