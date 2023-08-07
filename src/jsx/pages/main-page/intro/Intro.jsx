@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Intro = ({ setSelectedArticle, swiper }) => {
+const Intro = ({ swiper }) => {
 
 
     const [currentPage, setCurrentPage] = useState(0)

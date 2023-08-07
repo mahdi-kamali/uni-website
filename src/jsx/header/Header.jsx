@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
@@ -7,6 +8,9 @@ const Header = () => {
   const [onIndex, setOnIndex] = useState();
   const [sideBar, setSideBar] = useState(false)
   const navigator = useNavigate()
+
+  const user = useSelector(state => state.user)
+
 
 
   function handleOnclick(path, index) {
@@ -17,13 +21,22 @@ const Header = () => {
 
 
 
+  function getUserFullName() {
+    return user?.value?.user ? user.value.user.name : "ورود کاربری"
+  }
+
+
 
 
   return (
     <header>
       <div className="left">
-        <button className="user">
-          <span>ورود </span>
+        <button
+          className="user"
+          onClick={() => handleOnclick("/auth", 9)}>
+          <span>
+            {getUserFullName()}
+          </span>
           <Icon icon="carbon:user-filled" />
         </button>
       </div>

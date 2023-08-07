@@ -97,6 +97,10 @@ html {
   overflow-y: scroll;
 }
 
+main {
+  min-height: 70vh;
+}
+
 .main-page {
   display: flex;
   flex-direction: column;
@@ -720,6 +724,280 @@ html {
 }
 .files-page .expanded .container-body {
   grid-template-rows: 1fr;
+}
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  background-image: url("../../images/auth/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  display: grid;
+  grid-template-columns: max-content 30rem;
+  gap: 2rem;
+}
+.auth-page .left {
+  min-width: 20rem;
+}
+.auth-page .left .form-inputs fieldset {
+  text-align: right;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+.auth-page .left .form-inputs fieldset legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  margin-right: 2rem;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+.auth-page .left .form-inputs fieldset legend span {
+  font-size: 1rem;
+}
+.auth-page .left .form-inputs fieldset legend svg {
+  font-size: 1.25rem;
+}
+.auth-page .left .form-inputs fieldset .content {
+  padding: 0 1em;
+  padding-bottom: 0.5em;
+}
+.auth-page .left .form-inputs fieldset .content input {
+  all: unset;
+  width: 100%;
+}
+.auth-page .left .form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.auth-page .left .form-buttons button {
+  color: white;
+  background-color: #4caf50;
+  min-width: 10ch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100rem;
+  padding: 0.5em 1em;
+  gap: 0.25rem;
+}
+.auth-page .left .form-buttons button span {
+  line-height: 1;
+}
+.auth-page .left .form-buttons button svg {
+  font-size: 1.25rem;
+}
+.auth-page .left .form-buttons .change-mode-button {
+  background-color: #3d405b;
+}
+.auth-page .right {
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  text-align: right;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.auth-page .right h2 {
+  font-weight: normal;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  background-image: url("../../images/dashboard/background.jpg");
+  overflow: hidden;
+}
+.dashboard .left .dashboard-users {
+  padding: 2em;
+  direction: rtl;
+}
+.dashboard .left .dashboard-users table {
+  text-align: end;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  color: white;
+}
+.dashboard .left .dashboard-users table thead th {
+  padding: 1.5em;
+  background-color: #0f8b8d;
+}
+.dashboard .left .dashboard-users table thead th li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.dashboard .left .dashboard-users table thead th li svg {
+  font-size: 1.25rem;
+}
+.dashboard .left .dashboard-users table thead th:last-child {
+  border-radius: 1rem 0 0 0;
+}
+.dashboard .left .dashboard-users table thead th:first-child {
+  border-radius: 0 1rem 0 0;
+}
+.dashboard .left .dashboard-users table tbody tr:nth-child(odd) {
+  background-color: #0f8b8d;
+}
+.dashboard .left .dashboard-users table tbody tr:nth-child(even) {
+  background-color: #0f8b8d;
+}
+.dashboard .left .dashboard-employes .employe-groups {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  padding: 2em;
+  flex-wrap: wrap;
+}
+.dashboard .left .dashboard-employes .employe-groups .item {
+  background-color: white;
+  padding: 0.35em 2em;
+  border-radius: 100rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.dashboard .left .dashboard-employes .employe-groups .item:hover {
+  background-color: #0f8b8d;
+  color: white;
+}
+.dashboard .left .dashboard-employes .employe-groups .item .item-buttons {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+}
+.dashboard .left .dashboard-employes .employe-groups .true {
+  background-color: #0f8b8d;
+  color: white;
+}
+.dashboard .left .dashboard-create-employe-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+  height: 100%;
+}
+.dashboard .left .dashboard-create-employe-category fieldset {
+  text-align: right;
+  width: 20rem;
+  padding: 1em;
+  padding-top: 0;
+}
+.dashboard .left .dashboard-create-employe-category fieldset legend {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.5em;
+}
+.dashboard .left .dashboard-create-employe-category fieldset legend svg {
+  font-size: 1.5rem;
+}
+.dashboard .left .dashboard-create-employe-category fieldset .content input {
+  all: unset;
+  padding: 0 0.5em;
+}
+.dashboard .left .dashboard-create-employe-category .form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 1rem;
+}
+.dashboard .left .dashboard-create-employe-category .form-buttons button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 100rem;
+  padding: 0.4em 1em;
+}
+.dashboard .left .dashboard-create-employe-category .form-buttons .submit {
+  background-color: #4caf50;
+  color: white;
+}
+.dashboard .right {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: -0.5rem 0rem 2rem 0rem rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+.dashboard .right ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.dashboard .right ul .item {
+  display: flex;
+  width: 100%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dashboard .right ul .item .item-header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+}
+.dashboard .right ul .item .item-header svg {
+  font-size: 1.5rem;
+}
+.dashboard .right ul .item .item-header:hover {
+  background-color: #0f8b8d;
+  color: white;
+}
+.dashboard .right ul .item .item-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 1s ease;
+}
+.dashboard .right ul .item .item-body .content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.dashboard .right ul .item .item-body .content .item {
+  overflow: initial;
+}
+.dashboard .right ul .item .item-body .content .item .item-header {
+  margin-right: 2rem;
+}
+.dashboard .right ul .item .item-body .content .item .item-header::after {
+  content: "";
+  width: 1rem;
+  height: 0.2rem;
+  background-color: currentColor;
+}
+.dashboard .right ul .open .item-body {
+  grid-template-rows: 1fr;
+}
+.dashboard .right ul .true .item-header {
+  background-color: #0f8b8d;
+  color: white;
 }
 
 @media only screen and (max-width: 1100px) {

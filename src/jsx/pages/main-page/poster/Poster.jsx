@@ -33,8 +33,6 @@ const Poster = () => {
                     <img src={require("../../../../images/poster/1.png")} alt="" />
                 </SwiperSlide>
             </Swiper>
-
-
         </section>
     )
 }
