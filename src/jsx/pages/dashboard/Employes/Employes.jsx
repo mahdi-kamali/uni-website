@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios"
-import { ADMIN_DELETE_EMPLOYES_CATEGORIES, ADMIN_GET_EMPLOYES_CATEGORIES, ADMIN_UPDATE_EMPLOYES_CATEGORIES } from '../../../../consts/API'
+import { ADMIN_DELETE_EMPLOYES, ADMIN_DELETE_EMPLOYES_CATEGORIES, ADMIN_GET_EMPLOYES, ADMIN_GET_EMPLOYES_CATEGORIES, ADMIN_UPDATE_EMPLOYES_CATEGORIES, BASE_URL } from '../../../../consts/API'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -11,41 +11,73 @@ const Employes = () => {
 
     const [categories, setCategories] = useState([])
 
-    const [selectedCategory, setSelectedCategry] = useState(categories[0])
 
     const [refresh, setRefresh] = useState(false)
 
+    const [employes, setEmployes] = useState([])
+
+    const [finalData, setFinalData] = useState([])
+
+
+    const [selectedCategory, setSelectedCategry] = useState(categories[0])
+
+
+    const [visibleItems, setVisible] = useState([])
 
 
 
-
-    useEffect(
-        () => {
-            axios({
-                method: "get",
-                url: ADMIN_GET_EMPLOYES_CATEGORIES,
-                headers: {
-                    "Authorization": user.token
-                }
-            })
-                .then(res => {
-                    setCategories(res.data.data)
-                })
-                .catch(error => { })
-        },
-        [refresh]
-    )
-
-    useEffect(() => {
-        setSelectedCategry(categories[0])
-    }, [categories, refresh])
 
 
     useEffect(() => {
+        axios({
+            method: "get",
+            url: ADMIN_GET_EMPLOYES,
+            headers: { "Authorization": user.token }
+        }).then(response => {
+            const data = response.data.data
+            setEmployes(data)
+        })
+    }, [refresh])
+
+
+    useEffect(() => {
+        axios({
+            method: "get",
+            baseURL: ADMIN_GET_EMPLOYES_CATEGORIES,
+            headers: {
+                "Authorization": user.token
+            }
+        }).then(response => {
+            const data = response.data.data
+            setCategories(data)
+            setSelectedCategry(data[0])
+        })
+    }, [employes])
+
+
+    useEffect(() => {
+        const currentSelectedCategoryName = selectedCategory?.attributes?.name
+        const res = employes.filter(item => item.attributes?.staffCategory?.name == currentSelectedCategoryName)
+        setVisible(res)
+        // const res = employes.filter(item)
     }, [selectedCategory])
 
+    const findCategories = (employes) => {
+        const temp = employes
 
-    const handleDeleteButtonClicked = (item) => {
+        employes.forEach(item => {
+            console.log(item);
+        })
+        const res = temp.filter(item => item.attributes?.staffCategory
+            ?.name == "دسته 1")
+
+        console.log(res);
+
+    }
+
+
+
+    const handleDeleteCategoryButtonClicked = (item) => {
         axios({
             method: "delete",
             url: ADMIN_DELETE_EMPLOYES_CATEGORIES + item.id,
@@ -54,7 +86,8 @@ const Employes = () => {
             }
         })
             .then(resp => {
-                if (resp.status === 200) {
+                if (resp) {
+                    alert("دسته بندی با موفقیت حذف شد")
                     setRefresh(!refresh)
                 }
             })
@@ -63,36 +96,32 @@ const Employes = () => {
             })
     }
 
-    const handleEditButtonClick = (item) => {
-        const name = prompt("نام جدید برای این دسته بندی وارد کنید :")
+
+    const handleEmployeDeleteClick = (item) => {
 
         axios({
-            method: "put",
-            url: ADMIN_UPDATE_EMPLOYES_CATEGORIES + item.id,
+            method: "delete",
+            url: ADMIN_DELETE_EMPLOYES + `${item.id}`,
             headers: {
                 "Authorization": user.token
-            },
-            data: {
-                staff_category: item.id,
-                name: name
             }
         })
-            .then(resp => {
-                console.log(resp);
+            .then(rep => {
+                alert("کاربر با موفقیت حذف شد !")
+                setRefresh(!refresh)
             })
-            .catch(erro => {
-                console.log(erro);
-            })
-
+        setRefresh(!refresh)
 
     }
 
 
 
 
+
     return (
         <div className='dashboard-employes'>
-            <div className="employe-groups">
+         
+            <div className="employe-categoreis">
                 {
                     categories.map((item, index) => {
                         return <span
@@ -103,14 +132,43 @@ const Employes = () => {
                                 {item.attributes.name}
                             </div>
                             <div className="item-buttons">
-                                <Icon icon="mdi:delete" onClick={() => handleDeleteButtonClicked(item)} />
-                                <Icon icon="mingcute:edit-fill"
-                                    onClick={() => handleEditButtonClick(item)} />
+                                <Icon icon="mdi:delete" onClick={() => handleDeleteCategoryButtonClicked(item)} />
                             </div>
                         </span>
                     })
                 }
             </div>
+            <div className="employe-list">
+                {
+                    visibleItems?.map((item, index) => {
+                        const image = BASE_URL + item.attributes.image
+                        return <div className="item" key={index}>
+                            <div className="item-header">
+                                <img src={image} />
+                            </div>
+                            <div className="item-body">
+                                <h1 className="name">
+                                    <span>نام :</span>
+                                    {item.attributes.name}</h1>
+                                <div className="role">
+                                    <span>نقش :</span>
+                                    {item.attributes.role}</div>
+                                <div className="phone">
+                                    <span>شماره داخلی :</span>
+                                    {item.attributes.phone}</div>
+                                <div className="mobile">
+                                    <span>شماره همراه :</span>
+                                    {item.attributes.mobile}</div>
+                            </div>
+                            <div className="item-buttons">
+                                <Icon icon="mdi:delete"
+                                    onClick={() => handleEmployeDeleteClick(item)} />
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+
         </div>
     )
 }

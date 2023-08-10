@@ -39,7 +39,7 @@ class GalleryController extends Controller
 
         if ($request->hasFile('image')) {
             $imageService->setExclusiveDirectory('images' . DIRECTORY_SEPARATOR . 'Gallery');
-            $result = $imageService->createIndexAndSave($request->file('image'));
+            $result = $imageService->save($request->file('image'));
             if ($result === false) {
                 return $this->error('', 'Your Image is not valid', 401);
             }

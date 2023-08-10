@@ -38,7 +38,7 @@ class GalleryCategoryController extends Controller
 
         if ($request->hasFile('image')) {
             $imageService->setExclusiveDirectory('images' . DIRECTORY_SEPARATOR . 'GalleryCategory');
-            $result = $imageService->createIndexAndSave($request->file('image'));
+            $result = $imageService->save($request->file('image'));
             if ($result === false) {
                 return $this->error('', 'Your Image is not valid', 401);
             }
@@ -90,7 +90,7 @@ class GalleryCategoryController extends Controller
                 $imageService->deleteDirectoryAndFiles($galleryCategory->image['directory']);
             }
             $imageService->setExclusiveDirectory('images' . DIRECTORY_SEPARATOR . 'GalleryCategory');
-            $result = $imageService->createIndexAndSave($request->file('image'));
+            $result = $imageService->save($request->file('image'));
             if ($result === false) {
                 return $this->error('','could not upload image',403);
             }

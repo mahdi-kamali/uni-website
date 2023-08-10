@@ -18,6 +18,7 @@ import AuthPage from './pages/auth/AuthPage';
 import { useDispatch } from 'react-redux';
 import { fetchUser } from './features/user';
 import Dashboard from './pages/dashboard/Dashboard';
+import { useState } from 'react';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 
 
   const dispatcher = useDispatch()
+  const [panelState, setPanelState] = useState(false)
 
   dispatcher(fetchUser())
 
@@ -32,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header panelState={panelState} setPanelState={setPanelState} />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/gallery" element={<Gallery />} />
@@ -41,7 +43,7 @@ function App() {
           <Route path="*" element={<MainPage />} />
           <Route path='/files' element={<Files />} />
           <Route path='/auth' element={<AuthPage />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/dashboard' element={<Dashboard panelState={panelState} setPanelState={setPanelState} />} />
 
         </Routes>
         <Footer />

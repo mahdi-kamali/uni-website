@@ -23,7 +23,8 @@ class StaffResource extends JsonResource
                 'mobile' => $this->mobile,
                 'image' => $this->image,
                 'created_at' => $this->created_at,
-                'updated_at' => $this->updated_at
+                'updated_at' => $this->updated_at,
+                'staffCategory' => $this->staffCategory,
             ],
         ];
     }

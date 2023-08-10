@@ -25,6 +25,7 @@ class FileStoreRequest extends FormRequest
     {
         return [
             'title' => 'required|max:120|min:2|regex:/^[ا-یa-zA-Z0-9\-۰-۹ء-ي., ]+$/u',
+            'description' => 'required',
             'file' => 'required|file',
         ];
     }

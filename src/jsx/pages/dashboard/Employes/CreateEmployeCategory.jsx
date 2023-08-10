@@ -3,6 +3,7 @@ import axios from "axios"
 import React from 'react'
 import { ADMIN_CREATE_EMPLOYES_CATEGORIES } from '../../../../consts/API';
 import { useSelector } from 'react-redux';
+import Fielset from '../components/Fielset';
 
 const CreateEmployeCategory = () => {
 
@@ -42,17 +43,12 @@ const CreateEmployeCategory = () => {
 
             </div>
             <form className="create-employe-body" onSubmit={handleFormSubmit}>
-                <fieldset>
-                    <legend>
-                        <span>
-                            نام دسته بندی
-                        </span>
-                        <Icon icon="bxs:category" />
-                    </legend>
-                    <div className="content">
-                        <input type="text" name='name' />
-                    </div>
-                </fieldset>
+                <Fielset
+                    title={" نام دسته بندی"}
+                    svg={<Icon icon="bxs:category" />}
+                    inputType={"text"}
+                    inputName={"name"}
+                />
                 <div className="form-buttons">
                     <button className='submit'>
                         <span>ایجاد کردن</span>

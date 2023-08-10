@@ -16,6 +16,7 @@ const AuthPage = () => {
     useEffect(() => {
 
         if (user?.value !== null) {
+            console.log(user);
             navigator("/dashboard")
         }
 

@@ -26,6 +26,8 @@ class PostUpdateRequest extends FormRequest
         return [
             'title' => 'required|max:120|min:2|regex:/^[ا-یa-zA-Z0-9\-۰-۹ء-ي., ]+$/u',
             'cat_id'=>'required|exists:categories,id',
+            'description' => 'required|max:2600|min:2|regex:/^[ا-یa-zA-Z0-9\-۰-۹ء-ي., ]+$/u',
+
             'image' => 'image|mimes:png,jpg,jpeg,gif,webp',   
         ];
     }

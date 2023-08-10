@@ -21,6 +21,7 @@ class CategoryPostsResource extends JsonResource
                 'title' => $this->title, 
                 'image' => $this->image,
                 'cat_id' => $this->cat_id,
+                'description' => $this->description,
                 'created_at' => $this->created_at,
                 'updated_at' => $this->updated_at
             ],

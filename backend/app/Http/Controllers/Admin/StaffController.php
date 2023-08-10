@@ -38,7 +38,7 @@ class StaffController extends Controller
 
         if ($request->hasFile('image')) {
             $imageService->setExclusiveDirectory('images' . DIRECTORY_SEPARATOR . 'Staff');
-            $result = $imageService->createIndexAndSave($request->file('image'));
+            $result = $imageService->save($request->file('image'));
             if ($result === false) {
                 return $this->error('', 'Your Image is not valid', 401);
             }
@@ -94,7 +94,7 @@ class StaffController extends Controller
                 $imageService->deleteDirectoryAndFiles($staff->image['directory']);
             }
             $imageService->setExclusiveDirectory('images' . DIRECTORY_SEPARATOR . 'Staff');
-            $result = $imageService->createIndexAndSave($request->file('image'));
+            $result = $imageService->save($request->file('image'));
             if ($result === false) {
                 return $this->error('','could not upload image',403);
             }

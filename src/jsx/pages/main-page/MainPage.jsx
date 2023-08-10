@@ -10,14 +10,19 @@ import { useState } from 'react'
 const MainPage = () => {
 
 
-    const [swiper, setSwiper] = useState(undefined)
 
+    const [selectedCategory, setSelectedCategory] = useState()
 
     return (
         <main className='main-page'>
             <Poster />
-            <Intro swiper={swiper} />
-            <Articles setSwiper={setSwiper} />
+            <Intro
+                setSelectedCategory={setSelectedCategory}
+                selectedCategory={selectedCategory} />
+
+            <Articles
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory} />
             <Stations />
             <AboutUniversity />
             <TotalViews />

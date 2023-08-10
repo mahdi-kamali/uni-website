@@ -1,228 +1,82 @@
 import React, { useState } from 'react'
 import { Icon } from '@iconify/react';
+import axios from "axios"
+import { useEffect } from 'react';
+import { APP_GET_GALLERIES, APP_GET_GALLERY_CATEGORIES, BASE_URL } from '../../../consts/API';
 const Gallery = () => {
 
-  const [onIndex, setOnIndex] = useState();
+
+  const [gallery, setGallery] = useState([])
+  const [categories, setCategories] = useState([])
+  const [finalData, setFinalData] = useState([])
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: APP_GET_GALLERY_CATEGORIES
+    }).then(response => {
+      const data = response.data.data
+      setCategories(data)
+    })
+  }, [])
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: APP_GET_GALLERIES
+    }).then(resp => {
+      const data = resp.data.data
+      setGallery(data)
+    })
+  }, [categories])
+
+
+
+  useEffect(() => {
+  }, [gallery])
+
+
+
+
+  const onClickCategory = (cat) => {
+    //  console.log(cat);
+    const temp = []
+    gallery.forEach((item) => {
+      if (item.attributes["cat_id"] == cat.id) {
+        temp.push(item)
+      }
+    })
+    setPosts(temp)
+  }
+
+
+
+
+
+
+
   return (
     <main className='gallery'>
       <div className="left">
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/1.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/2.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/3.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/3.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/2.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/1.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/1.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/2.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/3.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/3.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/2.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/1.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/1.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/2.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/3.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/3.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/2.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
-        <div className="item">
-          <div className="item-header">
-            <div className="image">
-              <img src={require("../../../images/gallery/left-side/1.png")} alt="" />
-            </div>
-          </div>
-          <div className="item-body">
-            <div className="title">
-              درب دانشکده فنی و حرفه ای دختران قم شهرک قدس
-            </div>
-          </div>
-        </div>
 
+        {
+          posts.map((item, index) => {
+            const image = BASE_URL + item.attributes.image
+            return <div className="item" key={index}>
+              <div className="item-header">
+                <div className="image">
+                  <img src={image} alt="" />
+                </div>
+              </div>
+              <div className="item-body">
+                <div className="title">
+                  {item.attributes.title}
+                </div>
+              </div>
+            </div>
+          })
+        }
       </div>
       <aside className='right'>
         <h1>
@@ -232,22 +86,16 @@ const Gallery = () => {
           <Icon icon="clarity:image-gallery-solid" />
         </h1>
         <ul>
-          <li>
-            <img src={require("../../../images/poster/1.png")} alt="" />
-            <span>محیط دانشگاه</span>
-          </li>
-          <li>
-            <img src={require("../../../images/poster/1.png")} alt="" />
-            <span>محیط دانشگاه</span>
-          </li>
-          <li>
-            <img src={require("../../../images/poster/1.png")} alt="" />
-            <span>محیط دانشگاه</span>
-          </li>
-          <li>
-            <img src={require("../../../images/poster/1.png")} alt="" />
-            <span>محیط دانشگاه</span>
-          </li>
+
+          {categories.map((cat, index) => {
+            const image = BASE_URL + cat.attributes.image
+            return <li onClick={() => { onClickCategory(cat) }}>
+              <img src={image} />
+              <span>
+                {cat?.attributes?.title}
+              </span>
+            </li>
+          })}
         </ul>
       </aside>
     </main>

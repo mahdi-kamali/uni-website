@@ -26,6 +26,9 @@ const userSlice = createSlice({
                     console.log(error);
                 })
         },
+        logOut: (state, action) => {
+            state.value = null
+        },
         signUp: (state, action) => {
         },
         fetchUser(state, action) {
@@ -43,4 +46,4 @@ const userSlice = createSlice({
 
 
 export default userSlice.reducer
-export const { login, signUp, fetchUser } = userSlice.actions
+export const { login, signUp, logOut, fetchUser } = userSlice.actions

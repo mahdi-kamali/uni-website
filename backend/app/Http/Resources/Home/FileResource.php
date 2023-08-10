@@ -19,6 +19,8 @@ class FileResource extends JsonResource
             'attributes' => [
                 'title' => $this->title, 
                 'file' => $this->file,
+                'description' => $this->description,
+
                 'created_at' => $this->created_at,
                 'updated_at' => $this->updated_at
             ],
