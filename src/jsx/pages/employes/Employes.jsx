@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { APP_GET_EMPLOYES, APP_GET_EMPLOYES_CATEGORIES } from '../../../consts/API';
+import { APP_GET_EMPLOYES, APP_GET_EMPLOYES_CATEGORIES, BASE_URL } from '../../../consts/API';
 
 const Employes = () => {
 
@@ -96,10 +96,11 @@ const Employes = () => {
                 <ul>
 
                     {visibleItems.map((item) => {
-                        console.log(item);
+                        const image = BASE_URL + item.attributes.image
+
                         return <li className='item'>
                             <div className="item-header">
-                                <img src={require("../../../images/about-us/user.png")} alt="" />
+                                <img src={image} />
                             </div>
                             <div className="item-body">
                                 <h2 className='name'>

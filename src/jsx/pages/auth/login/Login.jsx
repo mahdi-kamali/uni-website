@@ -49,7 +49,7 @@ const Login = ({ setAuthMode }) => {
         <Fieldset
           legend={{ title: "ایمیل", svg: <Icon icon="ic:round-alternate-email" /> }}
           inputName={"email"}
-          inputType={"text"}
+          inputType={"email"}
         />
         <Fieldset
           legend={{ title: "پسوورد", svg: <Icon icon="mdi:password" /> }}

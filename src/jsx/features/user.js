@@ -28,6 +28,7 @@ const userSlice = createSlice({
         },
         logOut: (state, action) => {
             state.value = null
+            localStorage.removeItem("user")
         },
         signUp: (state, action) => {
         },

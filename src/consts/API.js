@@ -1,8 +1,12 @@
 export const BASE_URL = "http://127.0.0.1:8000/"
 
 
+// auth
 export const USER_SIGNUP_URL = BASE_URL + "api/register/"
 export const USER_LOGIN_URL = BASE_URL + "api/login/"
+
+
+
 
 
 export const ADMIN_GET_EMPLOYES_CATEGORIES = BASE_URL + "api/admin/staff-category/"

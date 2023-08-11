@@ -25,7 +25,7 @@ const CreateEmployeCategory = () => {
 
         })
             .then(response => {
-
+             
                 if (response.status === 201) {
                     alert("دسته بندی با موفقیت اضافه شد !")
                 }
@@ -42,7 +42,8 @@ const CreateEmployeCategory = () => {
                 </h1>
 
             </div>
-            <form className="create-employe-body" onSubmit={handleFormSubmit}>
+            <form className="create-employe-body"
+                onSubmit={handleFormSubmit}>
                 <Fielset
                     title={" نام دسته بندی"}
                     svg={<Icon icon="bxs:category" />}

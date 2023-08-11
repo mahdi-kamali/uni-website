@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { logOut } from '../features/user';
 
 const Header = ({ panelState, setPanelState }) => {
@@ -13,6 +13,7 @@ const Header = ({ panelState, setPanelState }) => {
 
   const user = useSelector(state => state.user)
 
+  const location = useLocation();
 
 
   function handleOnclick(path, index) {
@@ -32,16 +33,25 @@ const Header = ({ panelState, setPanelState }) => {
     dispatcher(logOut())
   }
 
+  const handlePanelClick = () => {
+
+    setPanelState(!panelState)
+    if (location.pathname === "/dashboard") return
+    handleOnclick("/auth", 9)
+  }
+
 
 
 
   return (
     <header>
 
-      <button className='panel-button' onClick={() => { setPanelState(!panelState) }}>
-        <span>پنل مدریتی</span>
-        <Icon icon="fluent:panel-left-32-filled" />
-      </button>
+      {
+        user?.value?.user?.role > 0 ? <button className='panel-button' onClick={() => handlePanelClick()}>
+          <span>پنل مدریتی</span>
+          <Icon icon="fluent:panel-left-32-filled" />
+        </button> : ""
+      }
       <div className="left">
         <button
           className="user"
@@ -51,6 +61,8 @@ const Header = ({ panelState, setPanelState }) => {
           </span>
           <Icon icon="carbon:user-filled" />
         </button>
+
+
 
       </div>
       <div className="mid">

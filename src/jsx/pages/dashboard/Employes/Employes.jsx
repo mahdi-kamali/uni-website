@@ -124,6 +124,7 @@ const Employes = () => {
             <div className="employe-categoreis">
                 {
                     categories.map((item, index) => {
+                        
                         return <span
                             onClick={() => setSelectedCategry(item)}
                             className={`item ${selectedCategory?.id === item?.id} `}
@@ -132,7 +133,8 @@ const Employes = () => {
                                 {item.attributes.name}
                             </div>
                             <div className="item-buttons">
-                                <Icon icon="mdi:delete" onClick={() => handleDeleteCategoryButtonClicked(item)} />
+                                <Icon icon="mdi:delete" 
+                                onClick={() => handleDeleteCategoryButtonClicked(item)} />
                             </div>
                         </span>
                     })
@@ -141,6 +143,7 @@ const Employes = () => {
             <div className="employe-list">
                 {
                     visibleItems?.map((item, index) => {
+                        console.log(item);
                         const image = BASE_URL + item.attributes.image
                         return <div className="item" key={index}>
                             <div className="item-header">

@@ -38,7 +38,6 @@ const SingUp = ({ setAuthMode }) => {
     }
 
 
-
     axios({
       method: "post",
       url: USER_SIGNUP_URL,
@@ -52,7 +51,6 @@ const SingUp = ({ setAuthMode }) => {
       })
 
 
-
     dispatcher(login(formData))
 
 
@@ -61,7 +59,9 @@ const SingUp = ({ setAuthMode }) => {
   }
 
   return (
-    <form className="signup-page" action="#"
+    <form
+     className="signup-page"
+      action="#"
       onSubmit={handleFormSubmit}>
       <div className="form-inputs">
         <Fieldset

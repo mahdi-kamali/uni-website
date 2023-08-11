@@ -29,7 +29,7 @@ const CreateEmploye = () => {
 
 
 
-    console.log(categories);
+
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -46,6 +46,7 @@ const CreateEmploye = () => {
         })
             .then(response => {
                 console.log(response);
+                alert("کاربر اضافه شد !")
             })
             .catch(error => {
                 console.log(error);
