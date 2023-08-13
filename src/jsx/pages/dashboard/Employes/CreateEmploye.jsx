@@ -27,6 +27,7 @@ const CreateEmploye = () => {
         })
     }, [])
 
+    
 
 
 
@@ -115,6 +116,7 @@ const CreateEmploye = () => {
                 </div>
 
             </form>
+           
         </div>
     )
 }
